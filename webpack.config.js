@@ -15,10 +15,15 @@ var config = {
         test : /\.jsx?/,
         include : APP_DIR,
         loader : 'babel-loader'
+      },
+      {
+        test : /\.less?/,
+        include : APP_DIR,
+        loader : "style-loader!css-loader!less-loader"
       }
     ]
   },
-  watch: true
+  watch: false
 };
 
 module.exports = config;

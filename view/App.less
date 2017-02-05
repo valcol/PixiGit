@@ -1,0 +1,137 @@
+
+@color0: #dddddd;
+@color1: #d6e685;
+@color2: #8cc665;
+@color3: #44a340;
+@color4: #1e6823;
+
+@width3: 20px;
+@width5: 10px;
+@width6: 98%;
+
+@height2: 20px;
+
+html {
+	box-sizing: border-box;
+}
+* {
+	box-sizing: inherit;
+	&:before {
+		box-sizing: inherit;
+	}
+	&:after {
+		box-sizing: inherit;
+	}
+}
+body {
+	background-color: #eeeeee;
+	color: #333333;
+	font-family: sans-serif;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	padding: 0.5em 1em;
+	text-align: center;
+}
+#grid_container {
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	-webkit-user-select: none;
+	cursor: default;
+	height: 105px;
+	margin: 10px;
+	overflow: auto;
+	user-select: none;
+	white-space: nowrap;
+	width: @width6;
+}
+#week_container {
+	width: 1250px;
+	.week {
+		float: left;
+		margin: 1px;
+		width: @width5;
+	}
+	.day {
+		float: left;
+		height: 10px;
+		margin: 1px;
+		width: @width5;
+	}
+}
+.level0 {
+	background: @color0;
+}
+.level1 {
+	background: @color1;
+}
+.level2 {
+	background: @color2;
+}
+.level3 {
+	background: @color3;
+}
+.level4 {
+	background: @color4;
+}
+.selectColorContainer {
+	border-bottom: 1px solid #bbbbbb;
+	height: 32px;
+	width: 100%;
+}
+.setPaintLevel {
+	float: left;
+	div {
+		height: @height2;
+		margin: 1px;
+		width: @width3;
+	}
+}
+.paintLevelLabel {
+	float: left;
+	margin: 6px 8px 0 0;
+}
+.setPaintLevel.active {
+	border: 3px solid #444444;
+}
+#hoveredDate {
+	float: left;
+	margin: 0 0 0 15px;
+}
+#reset {
+	float: right;
+	padding: 4px;
+	.setPaintLevel {
+		div {
+			height: @height2;
+			margin: 1px;
+			width: @width3;
+		}
+	}
+}
+.optionsForm {
+	margin-left: 20px;
+}
+#maxdaily {
+	margin-right: 20px;
+	width: 50px;
+}
+.datepicker {
+	width: 75px;
+}
+#buildCommits {
+	margin: 10px 0 0 20px;
+	padding: 5px;
+}
+#commits {
+	background: @color0;
+	display: none;
+	font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+	font-size: 10pt;
+	height: 175px;
+	margin: 10px;
+	overflow: auto;
+	white-space: pre;
+	width: @width6;
+}

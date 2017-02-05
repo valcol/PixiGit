@@ -4,6 +4,8 @@ import {render} from 'react-dom';
 import Grid from './Grid.jsx';
 import Form from './Form.jsx';
 
+import css from './App.less';
+
 export default class App extends Component {
 
   constructor(props) {
