@@ -74,7 +74,34 @@ export default class App extends Component {
   }
 
   handleForm(content){
-    console.log(content);
+    fetch('/getgit/'+content)
+    .then(function(response) {
+      return response.json();
+    })
+    .then((response) => {
+      let activityArray = [];
+      for (let i=0;i<52*this.state.numberOfYears;i++){
+        let weeks = [];
+        for (let j=0;j<7;j++){
+          let qb = response.quartileBoundaries;
+          let value = response.contributions[(i*7)+j];
+          if (value < 1)
+            weeks.push(0);
+          else if (value <= qb[0])
+            weeks.push(1);
+          else if (value <= qb[1])
+            weeks.push(2);
+          else if (value <= qb[2])
+            weeks.push(3);
+          else if (value > qb[2])
+            weeks.push(4);
+          else
+            weeks.push(0);
+        }
+        activityArray.push(weeks);
+      }
+      this.setState({activityArray});
+    })
   }
 
   render() {
